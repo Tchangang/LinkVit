@@ -1,6 +1,9 @@
 # LinkVit
 LinkVit - mass invits and messages on Linkedin
 
+## Download
+Download on chrome store here :
+
 ## Description (see screenshots below)
 Link'Vit helps you to get more contacts. Make a search and send mass invitations with customs messages within minutes.<br><br>
 This extension started on growth hacking forum : https://www.growthhacking.fr/t/comment-avoir-73-d-engagement-sur-un-mass-follow-linkedin/9004/26
