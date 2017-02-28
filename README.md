@@ -1,4 +1,4 @@
-# LinkVit
+# LinkVit ![alt text](icons/icon128.png "App icon")
 LinkVit - mass invits and messages on Linkedin
 
 ## Download
