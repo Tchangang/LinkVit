@@ -137,72 +137,74 @@ $( document ).ready(function() {
       		scrollTop: $(document).height()+800
     	}, 4000);
 
-
     	setTimeout(
 	    	function(){
 	    		leads = [];
 	    		// Ici je sais que je peux continuer
 	    		$('ul.results-list li .search-result__actions--primary').each(function(index){
-					var obj  = {};
-					obj.fullname = $(this).closest('ul.results-list li.search-result').find('a[data-control-name="search_srp_result"] .name-and-icon .name').text();
-					obj.firstname = obj.fullname.split(' ')[0];
-					obj.lastname = "";
+	    			console.log($(this).is(':disabled'));
+	    			if(!$(this).is(':disabled')){
+						var obj  = {};
+						obj.fullname = $(this).closest('ul.results-list li.search-result').find('a[data-control-name="search_srp_result"] .name-and-icon .name').text();
+						obj.firstname = obj.fullname.split(' ')[0];
+						obj.lastname = "";
 
-					for(i in obj.fullname.split(' ')){
-						if(i!=0){
-							obj.lastname+=obj.fullname.split(' ')[i]+" ";
-						}
-					}
-					obj.jobtitle = $(this).closest('ul.results-list li.search-result').find('p.subline-level-1').text();
-					obj.id = $(this).closest('ul.results-list li.search-result').attr('id');
-					
-					console.log(obj.jobtitle);
-					console.log(search_term);
-
-					if(search_term.length>0){
-						for(i in search_term){
-							if(obj.jobtitle.trim().toLowerCase().indexOf(search_term[i].trim().toLowerCase())!=-1  && search_term[i].trim().length>0){
-								obj.accept = true;
+						for(i in obj.fullname.split(' ')){
+							if(i!=0){
+								obj.lastname+=obj.fullname.split(' ')[i]+" ";
 							}
 						}
-					}else{
-						obj.accept = true;
-					}
-					if(rejected_term.length>0){
-						for(i in rejected_term){
-							if(obj.jobtitle.trim().toLowerCase().indexOf(rejected_term[i].trim().toLowerCase())!=-1 && rejected_term[i].trim().length>0){
-								obj.accept = false;
+						obj.jobtitle = $(this).closest('ul.results-list li.search-result').find('p.subline-level-1').text();
+						obj.id = $(this).closest('ul.results-list li.search-result').attr('id');
+						
+						console.log(obj.jobtitle);
+						console.log(search_term);
+
+						if(search_term.length>0){
+							for(i in search_term){
+								if(obj.jobtitle.trim().toLowerCase().indexOf(search_term[i].trim().toLowerCase())!=-1  && search_term[i].trim().length>0){
+									obj.accept = true;
+								}
+							}
+						}else{
+							obj.accept = true;
+						}
+						if(rejected_term.length>0){
+							for(i in rejected_term){
+								if(obj.jobtitle.trim().toLowerCase().indexOf(rejected_term[i].trim().toLowerCase())!=-1 && rejected_term[i].trim().length>0){
+									obj.accept = false;
+								}
 							}
 						}
-					}
 
-					if(message){
-						var temp = message;
-						temp = temp.replace(myregex.firstname,obj.firstname);
-						temp = temp.replace(myregex.lastname,obj.lastname);
-						temp = temp.replace(myregex.fullname,obj.fullname);
-						obj.message = temp;
-					}
+						if(message){
+							var temp = message;
+							temp = temp.replace(myregex.firstname,obj.firstname);
+							temp = temp.replace(myregex.lastname,obj.lastname);
+							temp = temp.replace(myregex.fullname,obj.fullname);
+							obj.message = temp;
+						}
 
-					if(obj.accept){
-						obj.timetowait = getTimeToWait();
-						if(leads.length<max){
-							// On ajoute les infos a notre tableau pour traiter tout ça plus tard
-							leads.push(obj);
+						if(obj.accept){
+							obj.timetowait = getTimeToWait();
+							if(leads.length<max){
+								// On ajoute les infos a notre tableau pour traiter tout ça plus tard
+								leads.push(obj);
+								console.log('************************************************');
+								console.log('Accepted');
+								console.log(obj);	
+								console.log('************************************************');
+							}
+						}else{
 							console.log('************************************************');
-							console.log('Accepted');
+							console.log('Not accepted');
 							console.log(obj);	
 							console.log('************************************************');
 						}
-					}else{
-						console.log('************************************************');
-						console.log('Not accepted');
-						console.log(obj);	
-						console.log('************************************************');
-					}
-					if(index==$('ul.results-list li .search-result__actions--primary').length-1){
-						//Fin des cocotiers
-						sendInvit(0);
+						if(index==$('ul.results-list li .search-result__actions--primary').length-1){
+							//Fin des cocotiers
+							sendInvit(0);
+						}
 					}
 				});
 	    	}, 5000
@@ -227,11 +229,11 @@ $( document ).ready(function() {
     					);
 		    		}else if(leads[index].message.length>0){
 		    			// clic sur bouton ajouter une note
-		    			$('.send-invite__actions button.button-secondary-large').focus();
 		    			$('.send-invite__actions button.button-secondary-large').trigger('click');
 		    			setTimeout(
 		    				function(){
 		    					// Remplissage de l'input
+		    					$('label #custom-message').focus();
 		    					$('label #custom-message').val(leads[index].message);
 		    					setTimeout(
 		    						function(){
@@ -240,7 +242,7 @@ $( document ).ready(function() {
 		    							setTimeout(
 				    						function(){
 				    							sendInvit(index+1);
-				    						},getSmallTimeToWait()
+				    						},600+getSmallTimeToWait()
 				    					);
 		    						},1000
 		    					);
@@ -257,7 +259,7 @@ $( document ).ready(function() {
 		    	}, 800+getSmallTimeToWait()
 		    );
 		}else{
-			showMsg('Finish');
+			showMsg('Finish ! Refresh page to see changes please !');
 		}
 	}
 
@@ -329,7 +331,7 @@ $( document ).ready(function() {
 	    	function(){
 	    		// Ici je sais que je peux continuer
 	    		$('#linkevit_msg').hide();
-	    	}, 1800
+	    	}, 2700
 	    );
 	}
 });
