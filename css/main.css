@@ -1,0 +1,115 @@
+#linkevit_container{
+	display:none;
+	width:290px;
+	padding:20px;
+	background:white;
+	position:fixed;
+	z-index:99999999;
+	top:30px;
+	right:30px;
+	border-radius:2px;
+	box-shadow: rgba(0, 0, 0, 0.498039) 0px 0px 30px;
+}
+
+#linkevit_container .linkevit_logotext{
+	text-align: left;
+	font-size:13px;
+	color:#0073b1;
+	font-weight: bold;
+	text-transform: uppercase;
+	letter-spacing: 0.2em;
+}
+
+#linkevit_container .linkevit_logotext .linkevit_logo{
+	float:left;
+}
+
+#linkevit_container .linkevit_logotext .linkevit_hide{
+	font-size:12px;
+	float:right;
+	text-transform: none;
+	letter-spacing: 0.01em;
+	color:#494949;
+	font-weight: normal;
+}
+
+#linkevit_container .linkevit_logotext .linkevit_hide:hover{
+	cursor:pointer;
+}
+
+#linkevit_container .linkevit_logotext div{
+	letter-spacing: 0.03em;
+	font-size:12px;
+	text-transform: none!important;
+	color:#494949;
+}
+
+#linkevit_container .linkevit_label:first-child{
+	padding-top:0px;
+}
+
+#linkevit_container .linkevit_label{
+	font-size:14px;
+	padding-top:10px;
+	text-align:left;
+}
+
+#linkevit_container .linkevit_input textarea,#linkevit_container .linkevit_input input{
+	width:100%;
+	/*font-size:13px;*/
+	padding-top:2px;
+	padding-bottom:2px;
+	padding-left:2px;
+	font-size:12px!important;
+	padding-right:2px;
+	margin-top:3px;
+	border:1px solid rgba(0,0,0,0.15);
+}
+
+#linkevit_container .linkevit_validate{
+	width:100% !important;
+	margin-top:5px!important;
+}
+
+#linkevit_container .linkevit_footer{
+	padding-top:20px;
+	font-size:12px;
+}
+
+#linkevit_container .linkevit_jobtitle{
+	font-size:11px;
+	color:#494949;
+}
+
+#linkevit_apercu_message{
+	font-size:12px;
+	color:#0073b1;
+	float:right;
+}
+
+#linkevit_apercu_message:hover{
+	cursor: pointer;
+}
+
+#linkevit_msg{
+	position:fixed;
+	top:0;
+	left:0;
+	bottom:0;
+	right:0;
+	width:170px;
+	height:90px;
+	z-index:99999999;
+	border-radius:5px;
+	box-shadow: rgba(0, 0, 0, 0.498039) 0px 0px 30px;
+	background:white;
+	color:#0073b1;
+	display:none;
+	font-size:13px;
+	line-height: 90px;
+	margin-left:auto;
+	margin-right:auto;
+	margin-top:150px;
+	text-align:center;
+}
+
