@@ -1,7 +1,7 @@
 # LinkVit
 LinkVit - mass invits and messages on Linkedin
 
-## Description
+## Description (see screenshots below)
 Link'Vit helps you to get more contacts. Make a search and send mass invitations with customs messages within minutes.<br><br>
 This extension started on growth hacking forum : https://www.growthhacking.fr/t/comment-avoir-73-d-engagement-sur-un-mass-follow-linkedin/9004/26
 
@@ -18,5 +18,10 @@ Exemple : Hello %firstname%, I'm Boris. I like your project and I think my tools
 Exemple 2 : Hello Mr %firstname% %lastname%, I'm Boris. I like your project and I think my tools can help you get more clients.<br><br>
 Exemple 3 : Hello Mr %fullname%, I'm Boris. I like your project and I think my tools can help you get more clients.
 
-## Error
+## Errors, Bugs, suggestions
 Feel free to contact me at tchangang.boris@gmail.com
+
+##Screenshots
+<img src="./screenshots/linkvit_screenshots_bis.png">
+<br><br>
+<img src="./screenshots/linkvit_screenshots.png">
