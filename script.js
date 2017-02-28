@@ -202,7 +202,6 @@ $( document ).ready(function() {
 					}
 					if(index==$('ul.results-list li .search-result__actions--primary').length-1){
 						//Fin des cocotiers
-						// alert('finish');
 						sendInvit(0);
 					}
 				});
@@ -220,26 +219,35 @@ $( document ).ready(function() {
 		    		// Si on n'a pas de message à envoyer
 		    		if(!leads[index].message) {
 		    			// click on button send
-		    			// $('.send-invite__actions button.button-primary-large').trigger('click');
+		    			$('.send-invite__actions button.button-primary-large').trigger('click');
 		    			setTimeout(
     						function(){
     							sendInvit(index+1);
     						},1000
     					);
 		    		}else if(leads[index].message.length>0){
+		    			// clic sur bouton ajouter une note
 		    			$('.send-invite__actions button.button-secondary-large').focus();
 		    			$('.send-invite__actions button.button-secondary-large').trigger('click');
 		    			setTimeout(
 		    				function(){
+		    					// Remplissage de l'input
 		    					$('label #custom-message').val(leads[index].message);
 		    					setTimeout(
 		    						function(){
-		    							sendInvit(index+1);
+		    							// clic sur bouton pour envoyer
+		    							$('.send-invite__actions button.button-primary-large').trigger('click');
+		    							setTimeout(
+				    						function(){
+				    							sendInvit(index+1);
+				    						},getSmallTimeToWait()
+				    					);
 		    						},1000
 		    					);
 		    				},615+getSmallTimeToWait()
 		    			);
 		    		}else{
+		    			$('.send-invite__actions button.button-primary-large').trigger('click');
 		    			setTimeout(
     						function(){
     							sendInvit(index+1);
