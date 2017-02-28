@@ -22,6 +22,7 @@ Exemple 3 : Hello Mr %fullname%, I'm Boris. I like your project and I think my t
 Feel free to contact me at tchangang.boris@gmail.com
 
 ##Screenshots
-<img src="./screenshots/linkvit_screenshots_bis.png">
+![alt text](screenshots/linkvit_screenshots_bis.png "Two buttons added on search results page")
 <br><br>
-<img src="./screenshots/linkvit_screenshots.png">
+![alt text](screenshots/linkvit_screenshots.png "Popup with infos to fill")
+
