@@ -4,7 +4,7 @@
 LinkVit - mass invits and messages on Linkedin
 
 ## Download
-Download on chrome store here :
+Download on chrome store here : https://chrome.google.com/webstore/detail/linkvit-mass-invits-and-m/lphfogbcapkfkfkdboppgihnfbelkdbn
 
 ## Description (see screenshots below)
 Link'Vit helps you to get more contacts. Make a search and send mass invitations with customs messages within minutes.<br><br>
