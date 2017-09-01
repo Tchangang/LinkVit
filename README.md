@@ -12,13 +12,13 @@ Link'Vit helps you to get more contacts. Make a search and send mass invitations
 
 This extension started on growth hacking forum : https://www.growthhacking.fr/t/comment-avoir-73-d-engagement-sur-un-mass-follow-linkedin/9004/26
 
-## Mass contacts on Linkedin ?
+## Mass contacts on Linkedin
 Make a search on Linkedin. LinkVit will detect "add" button. We add a button the result page to launch LinkVit.<br><br>
 Then you will have a popup with informations to fill like "search term" (add people who have only this field in their jobtitle), "rejected term" and message.
 
 The extension uses random interval to fake a human. Don't worry.
 
-## Delete old invitations ?
+## Delete old invitations
 Open the page : https://www.linkedin.com/mynetwork/invitation-manager/sent/.
 
 Linkvit will add a button at the top of page "Link'vit - Remove old invits". Click and specify your criteria (in days). By exemple, entering 2 will remove invitations older than 2 peoples. 
